@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Hangman(),
-      routes: {
-        '/hangman-2': (context) => const Hangman2(),
-      },
+      // routes: {
+      //   '/hangman-2': (context) => const Hangman2(),
+      // },
     );
   }
 }

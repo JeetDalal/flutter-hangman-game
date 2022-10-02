@@ -12,7 +12,18 @@ class Hangman extends StatefulWidget {
 }
 
 class _HangmanState extends State<Hangman> {
-  List<String> _words = ["BRAVE", "SPORT", "CROWS", "FREED", "SWIMS", "DRIVE"];
+  final List<String> _words = [
+    "BRAVE",
+    "SPORT",
+    "CROWS",
+    "FREED",
+    "SWIMS",
+    "DRIVE",
+    "BREAD",
+    "CREAM",
+    "HOVER",
+    "SMART",
+  ];
   String answer = "BRAVE";
   bool _isCorrect = false;
   List<String> userAnswer = [' ', ' ', ' ', ' ', ' '];
@@ -72,7 +83,7 @@ class _HangmanState extends State<Hangman> {
     'W',
     'X',
     'Y',
-    'Z',
+    'Z'
   ];
 
   @override
@@ -121,7 +132,7 @@ class _HangmanState extends State<Hangman> {
                 scrollDirection: Axis.horizontal,
                 itemCount: answer.length,
                 padding: const EdgeInsets.all(8),
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: ((context, index) {
                   return AnswerBox(
                     letter: userAnswer[index],
@@ -135,7 +146,7 @@ class _HangmanState extends State<Hangman> {
             child: Container(
               height: 300,
               child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: letters.length,
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 50,
@@ -225,11 +236,3 @@ class _HangmanState extends State<Hangman> {
     );
   }
 }
-// const Text(
-//             'Hangman Image',
-//             textAlign: TextAlign.center,
-//             style: TextStyle(
-//               color: Colors.white,
-//               fontSize: 30,
-//             ),
-//           ),
